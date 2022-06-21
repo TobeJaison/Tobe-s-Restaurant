@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tobe's Checkout</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            display: flex;
+            background-color: brown;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            position: relative;
+            top: 1em;
+            color: antiquewhite;
+            font-family: cursive;
+            cursor:text;
+        }
+
+        #title {
+            position: relative;
+            color: antiquewhite;
+            font-family: cursive;
+            left: 46.5%;
+        }
+
+        #contact-us {
+            padding-right: 3em;
+            
+        }
+
+        #container {
+            display: flex;
+            position: relative;
+            margin-bottom: 3em;
+            top: 2em;
+            max-width: 100%;
+        }
+
+        .item {
+            margin: 0 2em;
+            position: relative;
+        }
+
+        .item span {
+            position: relative;
+            top: -1.2em;
+            margin-left: 3em;
+        }
+
+
+
+        .item2 {
+            margin-bottom: 2.3em;
+            position: relative;
+            top: 1em;
+            left: 2em;
+        }
+
+        .text3 {
+            margin-left: 4em;
+        }
+
+        #mainDiv h2 {
+            text-align: center;
+        }
+
+        #container2 {
+            position: relative;
+            top: 4em;
+            left: 54em;
+            background-color: ghostwhite;
+            max-width: 30%;
+            padding: 2em;
+        }
+
+        #totalPrice {
+            width: 52%;
+            
+            
+        }
+        #totalPrice  p {
+            margin-left:2em;
+        }
+        #totalPrice h3 {
+            margin-left: 1.5em;
+        }
+        #payment input {
+            padding: .5em;
+            width: 80%;
+            position: relative;
+            outline: none;
+        }
+
+        #payment select {
+            padding: .5em;
+            width: 55%;
+            position: relative;
+            outline: none;
+        }
+        #orderBtn {
+            position: relative;
+            
+            background-color: saddlebrown;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        @media screen and (max-width:600px) {
+            #image-and-title {
+                width:100%;
+            }
+           
+            #quantity-and-price {
+                width: 100%;
+            }
+            .item{
+              margin:0em
+            }
+            .item span {
+                position: relative;
+                top: -1.2em;
+                margin-left: .2em;
+            }
+
+            .item2 {
+                margin-bottom: 2.3em;
+                margin-left:2em;
+                position: relative;
+                top: 1em;
+                left: 0em;
+            }
+            .text3{
+                margin-left:2em;
+            }
+            #container2 {
+                position: relative;
+                top: 4em;
+                left:1em;
+                background-color: ghostwhite;
+                max-width: 60%;
+                padding: 2em;
+            }
+            #totalPrice p {
+                margin-left: 0em;
+            }
+
+            #totalPrice h3 {
+                margin-left: 0em;
+            }
+            #totalPrice {
+                position: relative;
+                
+                left: 1em;
+            }
+            #container {
+                
+                position: relative;
+                margin-bottom: 3em;
+                top: 2em;
+                left:1em;
+                max-width: 100%;
+            }
+            #payment input {
+                padding: .5em;
+                width: 100%;
+                position: relative;
+                outline: none;
+            }
+
+            #payment select {
+                padding: .5em;
+                width: 100%;
+                position: relative;
+                outline: none;
+            }
+            #contact-us {
+                padding: 0em;
+                margin: 0;
+            }
+        }
+        @media screen and (min-width:600px) and (max-width:1200px) {
+            #container2 {
+                position: relative;
+                top: 4em;
+                left: 2em;
+                background-color: ghostwhite;
+                max-width: 55%;
+                min-width:50%;
+                padding: 2em;
+            }
+            #contact-us {
+                margin-left: 1em;
+            }
+           
+            
+
+            #payment input {
+                padding: .5em;
+                width: 100%;
+                position: relative;
+                outline: none;
+            }
+
+            #payment select {
+                padding: .5em;
+                width: 100%;
+                position: relative;
+                outline: none;
+            }
+        }
+    </style>
+    <script src="order.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div id="title">
+                <h1>Tobe's</h1>
+            </div>
+
+            <nav id="contact-us">
+                <ul>
+                    <li><a href="#">Ph: 215-645-8569</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="mainDiv">
+        <h2>Order Details</h2>
+        <div id="container">
+            <div id="image-and-title">
+
+            </div>
+
+            <div id="quantity-and-price">
+
+            </div>
+            
+        </div>
+        <div id="totalPrice">
+
+        </div>
+        <div id="container2">
+            <table id="payment">
+                <tr>
+                    <td><h3>Payment</h3></td>
+                </tr>
+                <tr>
+                    <td>Card Type: </td>
+                    <td>
+                        <select id="cardType">
+                            <option value="blank" selected></option>
+                            <option value="Mastercard">Mastercard</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="creditCard">Credit Card</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name on Card: </td>
+                    <td><input id="cardHolder" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Sixteen Digit Card Number: </td>
+                    <td><input id="sixteenDigitNumber" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Expiration Date (MM/YYYY): </td>
+                    <td><input id="expirationDate" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>CVV: </td>
+                    <td><input id="cvv" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="orderBtn">Place Order</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

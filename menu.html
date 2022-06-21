@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tobe's Menu</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            display: flex;
+            background-color: brown;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            position: relative;
+            top: 1em;
+            color: antiquewhite;
+            font-family: cursive;
+            cursor: text;
+        }
+
+        #title {
+            position: relative;
+            color: antiquewhite;
+            font-family: cursive;
+            left: 46.5%;
+        }
+
+        #contact-us {
+            padding-right: 3em;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: cursive;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            top: 2em;
+            text-align: center;
+        }
+
+        .column {
+            background-color: brown;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #column1 {
+            
+            display: flex;
+            justify-content:space-evenly;
+        }
+
+        #column2 {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .itemContainer {
+            background-color: brown;
+            color: white;
+            height:32em;
+            text-align: center;
+            text-decoration: none;
+            margin:0 1em
+            
+        }
+        .itemContainer img,span {
+            position:relative;
+            top:1em;
+        }
+        .itemContainer img {
+            margin:0 3em;
+        }
+      
+        .itemContainer2 {
+            background-color: brown;
+            color: white;
+            height: 32em;
+            text-align: center;
+            text-decoration: none;
+            margin: 1em 1em
+        }
+        .itemContainer2 img, span {
+            position: relative;
+            top: 1em;
+        }
+
+        .itemContainer2 img {
+            margin: 0 3em;
+        }
+        .column button {
+            background-color: saddlebrown;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-family: cursive;
+        }
+        .addBtn {
+            position: relative;
+            top: 1.2em;
+            background-color: saddlebrown;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            cursor: pointer;
+        }
+        .qty {
+            position: relative;
+            top: .5em;
+            width:10%;
+        }
+        .qtyLabel {
+            position: relative;
+            top: .5em;
+            right: .5em;
+        }
+        .cost {
+            position: relative;
+            top: 1em;
+        }
+        .column2 button {
+            background-color: saddlebrown;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+           
+            font-family: cursive;
+        }
+
+        .addBtn2 {
+            position: relative;
+            top: 1.2em;
+            background-color: saddlebrown;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            cursor: pointer;
+        }
+        #menuBtn {
+            position: relative;
+            left: 2.5em;
+            background-color: saddlebrown;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+        }
+        #checkOutBtn {
+            position: relative;
+            left: 76em;
+            background-color: saddlebrown;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            text-decoration:none;
+        }
+       
+           
+        .qty2 {
+            position: relative;
+            top: .5em;
+            width: 10%;
+        }
+
+        .qtyLabel2 {
+            position: relative;
+            top: .5em;
+            right: .5em;
+        }
+
+        .cost2 {
+            position: relative;
+            top: 1em;
+        }
+        .column h3, img {
+            position: relative;
+            top: -1em;
+        }
+
+        h3 {
+            font-family: cursive;
+        }
+
+        @media screen and (max-width:600px) {
+            .columns {
+                flex-direction: column;
+            }
+            #contact-us{
+              
+                padding: 0em;
+                margin:0;
+               
+            }
+           
+            .column {
+                background-color: brown;
+                color: white;
+                
+                margin: 0 auto;
+                margin-bottom: 1.5em;
+                width: 50%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            .itemContainer {
+                background-color: brown;
+                color: white;
+                height: 32em;
+                text-align: center;
+                text-decoration: none;
+                min-width: 60%;
+                max-width: 60%;
+                margin: 0 auto;
+                padding:0 2em;
+                margin-bottom: 1em;
+            }
+            .itemContainer2 {
+                background-color: brown;
+                color: white;
+                height: 32em;
+                text-align: center;
+                text-decoration: none;
+                min-width: 60%;
+                max-width: 62%;
+                margin: 0 auto;
+                padding: 0 2em;
+                margin-bottom: 1em;
+            }
+           
+            #column1 {
+                flex-direction: column;
+                margin-bottom: 2em;
+            }
+
+            #column2 {
+                flex-direction: column;
+            }
+
+            #checkOutBtn {
+                position: relative;
+                left: 32%;
+                background-color: saddlebrown;
+                color: white;
+                border: none;
+                padding: 14px 25px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .itemContainer {
+                margin-bottom: 2em
+            }
+            .itemContainer img {
+                margin: 0em auto;
+            }
+            .itemContainer2 img {
+                margin: 0em auto;
+            }
+        }
+        @media screen and (min-width:600px) and (max-width:1200px) {
+            .columns {
+                flex-direction: column;
+            }
+
+            .column {
+                background-color: brown;
+                color: white;
+                margin: 0 auto;
+                margin-bottom: 1.5em;
+                padding: 2em;
+                width: 40%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                min-width: 45%;
+                max-width: 60%;
+            }
+
+
+            
+          
+
+            #column1 {
+                flex-direction: column;
+                margin-bottom: 2em;
+              
+            }
+
+            #column2 {
+                flex-direction: column;
+               
+            }
+
+            #checkOutBtn {
+                position: relative;
+                left: 58%;
+                background-color: saddlebrown;
+                color: white;
+                border: none;
+                padding: 14px 25px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .itemContainer {
+                margin-bottom: 2em
+            }
+            .itemContainer {
+                background-color: brown;
+                color: white;
+                height: 32em;
+                text-align: center;
+                text-decoration: none;
+                
+                min-width: 60%;
+                max-width: 62%;
+                margin: 0 auto;
+                margin-bottom: 1em;
+            }
+
+                .itemContainer img, span {
+                    position: relative;
+                    top: 1em;
+                }
+
+                .itemContainer img {
+                    margin: 0 auto;
+                }
+
+            .itemContainer2 {
+                background-color: brown;
+                color: white;
+                height: 32em;
+                text-align: center;
+                text-decoration: none;
+                min-width: 60%;
+                max-width: 62%;
+                margin: 0 auto;
+                margin-bottom: 1em;
+            }
+
+                .itemContainer2 img, span {
+                    position: relative;
+                    top: 1em;
+                }
+
+                .itemContainer2 img {
+                    margin: 0 auto;
+                }
+        }
+        @media screen and (max-width:1400px) {
+            #checkOutBtn {
+                position: relative;
+                left: 71.5%;
+                background-color: saddlebrown;
+                color: white;
+                border: none;
+                padding: 14px 25px;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                cursor: pointer;
+                text-decoration: none;
+
+
+            }
+            
+        }
+    </style>
+    <script src="menu.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div id="title">
+                <h1>Tobe's</h1>
+            </div>
+          
+            <nav id="contact-us">
+                <ul>
+                    <li><a href="#">Ph: 215-645-8569</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    <div class="container">
+        <h2>Menu</h2>
+        <div class="columns">
+            <div class="column">
+                <h3>Sandwitches</h3>
+                <img src="./images/sandwitches.jpg" alt="sandwitches" height="250" width="250"><br>
+                <button id="sandwichBtn">Sandwitches</button>
+            </div>
+
+            <div class="column">
+                <h3>Salads</h3>
+                <img src="./images/salads.jpg" alt="Salad" height="250" width="250"><br>
+                <button id="saladBtn">Salads</button>
+            </div>
+
+            <div class="column">
+                <h3>Pizzas</h3>
+                <img src="./images/pizza.jpg" alt="Pizza" height="250" width="250"><br>
+                <button id="pizzaBtn">Pizzas</button>
+            </div>
+            <div class="column">
+                <h3>Sodas</h3>
+                <img src="./images/soda-brands.jpeg" alt="Soda" height="250" width="250"><br>
+                <button id="sodaBtn">Sodas</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="container2">
+        <h2 id="foodType"></h2>
+
+        <div id="column1">
+
+
+        </div>
+
+        <div id="column2">
+
+        </div>
+        <button type="button" name="menuBtn" id="menuBtn">Back to Menu</button>
+        <button id="checkOutBtn">Proceed to Checkout</button>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Tobe's </title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .column1 {
+            padding: 0px;
+            background-image: url("images/welcomepg.jpg");
+            background-position:;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 75%;
+            color: black;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        .column1 h2, span {
+            position: relative;
+            left: 5%;
+            top: 35%;
+        }
+
+        .column2 {
+            background-color: floralwhite;
+            width: 25%;
+            text-align: center;
+            font-family: cursive;
+            padding-top: 4em;
+        }
+
+        .column2 a {
+            background-color: brown;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .column2 input {
+            padding: .5em;
+            width: 50%;
+            position: relative;
+            outline: none;
+        }
+
+        .column2 select {
+            padding: .5em;
+            width: 28%;
+            position: relative;
+            outline: none;
+        }
+
+        .columns {
+            display: flex;
+            height: 86.8vh;
+        }
+
+        #header {
+            display: flex;
+            background-color: brown;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            position: relative;
+            top: 1em;
+            color: antiquewhite;
+            cursor: text;
+            font-family: cursive;
+        }
+
+        #title {
+            position: relative;
+            color: antiquewhite;
+            font-family: cursive;
+            left: 37.5%;
+        }
+
+        #contact-us {
+            padding-right: 3em;
+        }
+
+        #menuButton {
+            background-color: saddlebrown;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #zip-code {
+            width: 20%;
+        }
+      
+        @media screen and (max-width:600px) {
+            .columns {
+                flex-direction: column;
+            }
+           
+            .column1 {
+                width: 100%;
+                height: 50%;
+            }
+
+            .column1 h2, span {
+                position: relative;
+                left: 0%;
+                top: 12%;
+            }
+
+            .column2 {
+                width: 100%;
+                height: 50%;
+                padding-top: 0;
+            }
+
+            .column2 input {
+                padding: .4em;
+                width: 25%;
+            }
+
+            .column2 select {
+                padding: .4em;
+                width: 25%;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            function nameValidate() {
+                var name = $("#name").val();
+                if (name == "") {
+                    alert("Name is a required field");
+                    $("#name").css("border-color", "red");
+                    return false;
+                }
+                $("#name").css("border-color", "");
+                return true;
+            }
+
+            function cityValidate() {
+                var city = $("#city").val();
+               
+                if (city == "") {
+                    alert("City is a required field");
+                    $("#city").css("border-color", "red");
+                    return false;
+                }
+                if (isNaN(city) == false) {
+                    
+                    alert("City names can't include numbers");
+                    $("#city").css("border-color", "red");
+                    return false;
+                }
+                $("#city").css("border-color", "");
+                return true;
+            }
+            function stateValidate() {
+                var state = $("#state").val();
+                if (state == "blank") {
+                    alert("State is required a field");
+                    $("#state").css("border-color", "red");
+                    return false;
+                }
+                $("#state").css("border-color", "");
+                return true;
+            }
+
+            function zipCodeValidate() {
+                var zipCode = $("#zip-code").val();
+                if (zipCode == "") {
+                    alert("Zip code is a required field");
+                    $("#zip-code").css("border-color", "red");
+                    return false;
+                }
+                if (zipCode.length != 5) {
+                    $("#zip-code").css("border-color", "red");
+                    alert("Zip code must be five digits");
+                    return false;
+                }
+                $("#zip-code").css("border-color", "");
+                return true;
+            }
+            function phoneValidate() {
+                var phone = $("#phone").val();
+                if (phone == "") {
+                    alert("Phone is a required field");
+                    $("#phone").css("border-color", "red");
+                    return false;
+                }
+                if (isNaN(phone) == true) {
+                    alert("Phone must contain only numbers");
+                    $("#phone").css("border-color", "red");
+                    return false;
+                }
+                if (phone.length != 10) {
+                    alert("Phone number must be ten digits");
+                    $("#phone").css("border-color", "red");
+                    
+                    return false;
+                }
+                $("#phone").css("border-color", "");
+                return true;
+            }
+
+            function addresssValidate() {
+                var address = $("#address").val();
+                
+                if (address == "") {
+                    alert("Address is a required field");
+                    $("#address").css("border-color", "red");
+                    return false;
+                }
+                if (isNaN(address) == false) {
+                    alert("Invalid address");
+                    $("#address").css("border-color", "red");
+                    
+                    return false;
+                }
+                
+                $("#address").css("border-color", "");
+                return true;
+            }
+            $("#menuButton").click(function () {
+
+
+                var name = nameValidate();
+                var phone = phoneValidate();
+                var address = addresssValidate();
+                var city = cityValidate();
+                var state = stateValidate();
+                var zipCode = zipCodeValidate();
+               
+                
+                
+
+                if (name != false && city != false && state != false && zipCode != false && phone != false && address != false) {
+                    alert("Registration Successful")
+
+                    location.href = "./menu.html";
+                }
+
+
+
+            });
+        };
+
+    </script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div id="title">
+                <h1>Tobe's</h1>
+            </div>
+            <nav id="contact-us">
+                <ul>
+                    <li><a href="#">Ph: 215-645-8569</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        
+        <div class="columns">
+
+            <div class="column1">
+
+                <h2>Welcome</h2>
+                <span>Please register to place an order</span>
+
+            </div>
+
+            <div class="column2">
+
+                <h3>Registration</h3>
+                <img src=""><br>
+                <input type="text" id="name" name="name" placeholder="Name"><br><br>
+                
+                <input type="text" id="phone" name="phone" placeholder="Phone"><br><br>
+                <input type="text" id="address" name="address" placeholder="Address"><br><br>
+                <input type="text" id="city" name="city" placeholder="City"><br><br>
+                <select name="state" id="state">
+                    <option value="blank"></option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New York">New York</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Delaware">Delaware</option>
+                </select>
+                <input type="text" id="zip-code" name="zipCode" placeholder="Zip Code"><br>
+                <button id="menuButton">Register</button>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
